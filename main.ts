@@ -1,5 +1,6 @@
 input.onPinPressed(TouchPin.P0, function () {
     while (!(input.isGesture(Gesture.LogoDown))) {
+        input.calibrateCompass()
         if (input.compassHeading() == 0) {
             basic.showLeds(`
                 . . # . .
@@ -47,7 +48,6 @@ input.onGesture(Gesture.Shake, function () {
 let Steps = 0
 soundExpression.giggle.playUntilDone()
 basic.showString("watchOS")
-input.calibrateCompass()
 Steps = 0
 let Minite = 0
 let time = 0
